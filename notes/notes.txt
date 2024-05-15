@@ -10,3 +10,4 @@ You can use double quotes to directly output variables in a string
 i.e echo "Hello I am $name";
 
 if you want quotes to appear we can use backslash escape character before the quotes
+echo "\"hello\""
