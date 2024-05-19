@@ -1,4 +1,60 @@
 <?php
+$x = "Hello world!";
+$y = 'Hello world!';
+
+var_dump($x);
+echo "<br>";
+var_dump($y);
+
+echo "<br>";
+
+$cars = array("Volvo","BMW","Toyota");
+var_dump($cars);
+
+echo "<br>";
+
+$x = true;
+var_dump($x);
+
+echo "<br>";
+
+$x = 10.365;
+var_dump($x);
+
+echo "<br>";
+
+$x = 5985;
+var_dump($x);
+
+echo "<br>";
+
+class Car {
+    public $color;
+    public $model;
+    public function __construct($color, $model) {
+      $this->color = $color;
+      $this->model = $model;
+    }
+    public function message() {
+      return "My car is a " . $this->color . " " . $this->model . "!";
+    }
+  }
+  
+  $myCar = new Car("red", "Volvo");
+  var_dump($myCar);
+  //echo $myCar.message()
+
+  echo "<br>";
+
+  $x = "Hello world!";
+$x = null;
+var_dump($x);
+
+$x = 5;
+$x = (string) $x;
+var_dump($x);
+
+var_dump($x); 
 
 $name="John Doe";
 define('NAME',"Constant Yoshi");
@@ -14,6 +70,8 @@ echo "\"hello\"";
  echo str_replace('D','W',$name);
 
 
+ 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,5 +86,32 @@ echo "\"hello\"";
     <H2><?php echo(NAME); ?></H2>
     <H2><?php echo($fullStatement); ?></H2>
     <H2><?php echo('Hello, ' .$fullStatement); ?></H2>
+
+
+    <?php
+    $a = 5;       // Integer
+$b = 5.34;    // Float
+$c = "hello"; // String
+$d = true;    // Boolean
+$e = NULL;    // NULL
+
+$a = (array) $a;
+$b = (array) $b;
+$c = (array) $c;
+$d = (array) $d;
+$e = (array) $e;
+
+//To verify the type of any object in PHP, use the var_dump() function:
+var_dump($a);
+var_dump($b);
+var_dump($c);
+var_dump($d);
+var_dump($e);
+?> 
+</pre>
+
+<p>When converting into arrays, most data types converts into an indexed array with one element.</p>
+
+<p>NULL values converts to an empty array object.</p>
 </body>
 </html>
