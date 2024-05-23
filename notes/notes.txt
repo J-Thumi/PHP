@@ -11,3 +11,280 @@ i.e echo "Hello I am $name";
 
 if you want quotes to appear we can use backslash escape character before the quotes
 echo "\"hello\""
+
+to know the type of var use var_dump($y);
+
+String
+Integer
+Float (floating point numbers - also called double)
+Boolean
+Array
+Object
+NULL
+Resource
+
+If you want to change the data type of an existing variable, but not by changing the value, you can use casting.
+
+Casting allows you to change data type on variables:
+$x = 5;
+$x = (string) $x;
+var_dump($x);
+
+The special resource type is not an actual data type. It is the storing of a reference to functions and resources external to PHP.
+A common example of using the resource data type is a database call.
+
+You can use double or single quotes, but you should be aware of the differences between the two.
+Double quoted strings perform action on special characters.
+E.g. when there is a variable in the string, it returns the value of the variable:
+$x = "John";
+echo "Hello $x";
+
+Single quoted strings does not perform such actions, it returns the string like it was written, with the variable name:
+$x = "John";
+echo 'Hello $x';
+
+The PHP strlen() function returns the length of a string
+echo strlen("Hello world!");
+
+The PHP str_word_count() function counts the number of words in a string.
+echo str_word_count("Hello world!");
+
+The PHP strpos() function searches for a specific text within a string.
+If a match is found, the function returns the character position of the first match. 
+If no match is found, it will return FALSE.
+
+echo strpos("Hello world!", "world");
+
+The strtoupper() function returns the string in upper case:
+$x = "Hello World!";
+echo strtoupper($x);
+
+The strtolower() function returns the string in lower case:
+$x = "Hello World!";
+echo strtolower($x);
+
+
+The PHP str_replace() function replaces some characters with some other characters in a string.
+Example
+Replace the text "World" with "Dolly":
+$x = "Hello World!";
+echo str_replace("World", "Dolly", $x);
+
+The PHP strrev() function reverses a string.
+
+Example
+Reverse the string "Hello World!":
+$x = "Hello World!";
+echo strrev($x);
+
+Whitespace is the space before and/or after the actual text, and very often you want to remove this space.
+
+Example
+The trim() removes any whitespace from the beginning or the end:
+$x = " Hello World! ";
+echo trim($x);
+
+The PHP explode() function splits a string into an array.
+The first parameter of the explode() function represents the "separator". 
+The "separator" specifies where to split the string.
+$x = "Hello World!";
+$y = explode(" ", $x);
+//Use the print_r() function to display the result:
+print_r($y);
+/*
+Result:
+Array ( [0] => Hello [1] => World! )
+*/
+
+The print_r function in PHP is a built-in function used for debugging and inspecting the contents of a variable. 
+It displays information about the variable in a human-readable format.
+For simple data types like strings, integers, or floats, print_r directly outputs the value of the variable.
+For arrays, it displays the contents of the array in a formatted way, 
+showing the keys (if any) and their corresponding values.
+ Nested arrays are also displayed with proper indentation.
+For objects, print_r shows the class name and a list of its public properties and their values.
+Array ( [0] => Hello [1] => orld! )
+
+To concatenate, or combine, two strings you can use the . operator:
+Example
+$x = "Hello";
+$y = "World";
+$z = $x . $y;
+echo $z;
+
+The result of the example above is HelloWorld, without a space between the two words.
+You can add a space character like this:
+Example
+$x = "Hello";
+$y = "World";
+$z = $x . " " . $y;
+echo $z;
+
+An easier and better way is by using the power of double quotes.
+By surrounding the two variables in double quotes with a white space between them, 
+the white space will also be present in the result:
+Example
+$x = "Hello";
+$y = "World";
+$z = "$x $y";
+echo $z;
+
+You can return a range of characters by using the substr() function.
+Specify the start index and the number of characters you want to return.
+Example
+Start the slice at index 6 and end the slice 5 positions later:
+$x = "Hello World!";
+echo substr($x, 6, 5);
+
+Start the slice at index 6 and go all the way to the end:
+$x = "Hello World!";
+echo substr($x, 6);
+
+Use negative indexes to start the slice from the end of the string:
+
+Example
+Get the 3 characters, starting from the "o" in world (index -5):
+$x = "Hello World!";
+echo substr($x, -5, 3);
+Note The last character has index -1.
+
+From the string "Hi, how are you?", get the characters starting from index 5, and continue until you reach the 3. character from the end (index -3).
+Should end up with "ow are y":
+$x = "Hi, how are you?";
+echo substr($x, 5, -3);
+
+To insert characters that are illegal in a string, use an escape character.
+An escape character is a backslash \ followed by the character you want to insert.
+An example of an illegal character is a double quote inside a string that is surrounded by double quotes:
+ExampleGet your own PHP Server
+$x = "We are the so-called "Vikings" from the north.";
+
+To fix this problem, use the escape character \":
+Example
+$x = "We are the so-called \"Vikings\" from the north.";
+
+\'	Single Quote	
+\"	Double Quote	
+\$	PHP variables	
+\n	New Line	
+\r	Carriage Return	
+\t	Tab	
+\f	Form Feed	
+\ooo	Octal value	
+\xhh	Hex value
+
+There are three main numeric types in PHP:
+Integer
+Float
+Number Strings
+In addition, PHP has two more data types used for numbers:
+Infinity
+NaN
+
+Variables of numeric types are created when you assign a value to them:
+Note: Another important thing to know is that even if 4 * 2.5 is 10, the result is stored as float,
+ because one of the operands is a float (2.5).
+
+Here are some rules for integers:
+An integer must have at least one digit
+An integer must NOT have a decimal point
+An integer can be either positive or negative
+Integers can be specified in three formats: decimal (base 10), hexadecimal (base 16 - prefixed with 0x), 
+octal (base 8 - prefixed with 0) or binary (base 2 - prefixed with 0b)
+
+PHP has the following functions to check if the type of a variable is integer:
+is_int()
+is_integer() - alias of is_int()
+is_long() - alias of is_int()
+
+PHP has the following functions to check if the type of a variable is float:
+
+is_float()
+is_double() - alias of is_float()
+Example
+Check if the type of a variable is float:
+$x = 10.365;
+var_dump(is_float($x));
+
+A numeric value that is larger than PHP_FLOAT_MAX is considered infinite.
+
+PHP has the following functions to check if a numeric value is finite or infinite:
+
+is_finite()
+is_infinite()
+However, the PHP var_dump() function returns the data type and value:
+Example
+Check if a numeric value is finite or infinite:
+$x = 1.9e411;
+var_dump($x);
+
+NaN stands for Not a Number.
+NaN is used for impossible mathematical operations.
+PHP has the following functions to check if a value is not a number:
+is_nan()
+However, the PHP var_dump() function returns the data type and value:
+
+The PHP is_numeric() function can be used to find whether a variable is numeric. The function returns true if the variable is a number or a numeric string, false otherwise.
+
+Example
+Check if the variable is numeric:
+
+$x = 5985;
+var_dump(is_numeric($x));
+
+$x = "5985";
+var_dump(is_numeric($x));
+$x = "59.85" + 100;
+var_dump(is_numeric($x));
+
+$x = "Hello";
+var_dump(is_numeric($x));
+
+Casting in PHP is done with these statements:
+
+(string) - Converts to data type String
+(int) - Converts to data type Integer
+(float) - Converts to data type Float
+(bool) - Converts to data type Boolean
+(array) - Converts to data type Array
+(object) - Converts to data type Object
+(unset) - Converts to data type NULL
+
+$a = 5;       // Integer
+$b = 5.34;    // Float
+$c = "hello"; // String
+$d = true;    // Boolean
+$e = NULL;    // NULL
+
+$a = (string) $a;
+$b = (string) $b;
+$c = (string) $c;
+$d = (string) $d;
+$e = (string) $e;
+
+//To verify the type of any object in PHP, use the var_dump() function:
+var_dump($a);
+var_dump($b);
+var_dump($c);
+var_dump($d);
+var_dump($e);
+
+Note that when casting a string that starts with a number, the (int) function uses that number. 
+If it does not start with a number, the (int) function convert strings into the number 0.
+
+Note that when casting a string that starts with a number, the (float) function uses that number. 
+If it does not start with a number, the (float) function convert strings into the number 0.
+
+If a value is 0, NULL, false, or empty, the (bool) converts it into false, otherwise true. Even -1 converts to true.
+
+When converting into arrays, most data types converts into an indexed array with one element.
+NULL values converts to an empty array object
+
+Objects converts into associative arrays where the property 
+names becomes the keys and the property values becomes the values:
+
+When converting into objects, most data types converts into a object with one property, named "scalar", 
+with the corresponding value.
+NULL values converts to an empty object.
+Indexed arrays converts into objects with the index number as property name and the value as property value.
+Associative arrays converts into objects with the keys as property names and values as property values.
