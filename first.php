@@ -107,6 +107,29 @@ var_dump($b);
 var_dump($c);
 var_dump($d);
 var_dump($e);
+
+
+//min and max
+echo(min(0, 150, 30, 20, -8, -200));
+echo(max(0, 150, 30, 20, -8, -200));
+
+//math
+echo(pi());
+
+
+//The abs() function returns the absolute (positive) value of a number:
+echo(abs(-6.7));
+
+
+//The sqrt() function returns the square root of a number:
+echo(sqrt(64));
+
+//The round() function rounds a floating-point number to its nearest integer:
+echo(round(0.60));
+echo(round(0.49));
+
+
+//The rand() function generates a random number:
 ?> 
 </pre>
 
