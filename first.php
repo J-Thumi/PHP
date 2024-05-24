@@ -184,6 +184,9 @@ echo cars[0];
 //ClassName::class	Returns the name of the specified class and the name of the namespace, if any.
 
 
+$Car=array("BMW","Mark","TX");
+$BMW=array("Name"=>"BMW","Model"=>"x550","year"=>2023);
+
 ?> 
 </pre>
 
