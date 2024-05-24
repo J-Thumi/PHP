@@ -832,3 +832,69 @@ foreach ($cars as $x) {
   echo "$x <br>";
 }
 
+
+
+/* ---------- Superglobals ---------- */
+/*
+  Built in variables that are always available in all scopes
+*/
+
+/*
+  $GLOBALS - A superglobal variable that holds information about any variables in global scope.
+  $_GET - Contains information about variables passed through a URL or a form.
+  $_POST -  Contains information about variables passed through a form.
+  $_COOKIE - Contains information about variables passed through a cookie.
+  $_SESSION - Contains information about variables passed through a session.
+  $_SERVER - Contains information about the server environment.
+  $_ENV - Contains information about the environment variables.
+  $_FILES -  Contains information about files uploaded to the script.
+  $_REQUEST - Contains information about variables passed through the form or URL.
+*/
+
+  <ul>
+    <li>Host: <?php echo $_SERVER['HTTP_HOST']; ?></li>
+    <li>Document Root: <?php echo $_SERVER['DOCUMENT_ROOT']; ?></li>
+    <li>System Root: <?php echo $_SERVER['SystemRoot']; ?></li>
+    <li>Server Name: <?php echo $_SERVER['SERVER_NAME']; ?></li>
+    <li>Server Port: <?php echo $_SERVER['SERVER_PORT']; ?></li>
+    <li>Current File Dir: <?php echo $_SERVER['PHP_SELF']; ?></li>
+    <li>Request URI: <?php echo $_SERVER['REQUEST_URI']; ?></li>
+    <li>Server Software: <?php echo $_SERVER['SERVER_SOFTWARE']; ?></li>
+    <li>Client Info: <?php echo $_SERVER['HTTP_USER_AGENT']; ?></li>
+    <li>Remote Address: <?php echo $_SERVER['REMOTE_ADDR']; ?></li>
+    <li>Remote Port: <?php echo $_SERVER['REMOTE_PORT']; ?></li>
+  </ul>
+
+
+<?php
+/* --- $_GET & $_POST Superglobals -- */
+
+/*
+  We can pass data through urls and forms using the $_GET and $_POST superglobals.
+*/
+
+if (isset($_POST['submit'])) {
+  // echo '<h3>' . $GET['username'] . '</h3>';
+  echo '<h3>' . $_POST['username'] . '</h3>';
+} ?>
+
+<!-- Pass data through a link -->
+<a href="<?php echo $_SERVER['PHP_SELF']; ?>?username=Brad">Link</a>
+
+
+<br><br>
+
+<!-- Pass data through a form -->
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+<div>
+  <label>Name: </label>
+  <input type="text" name="name">
+</div>
+<br>
+<div>
+<label>Password: </label>
+  <input type="password" name="password">
+</div>
+<br>
+  <input type="submit" name="submit" value="Submit">
+</form>
