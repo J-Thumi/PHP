@@ -819,5 +819,16 @@ $myArr = array("car" => "Volvo", "age" => 15, "message" => myFunction);
 $myArr["message"]();
 
 
+Display all array items, keys and values:
+$car = array("brand"=>"Ford", "model"=>"Mustang", "year"=>1964);
+foreach ($car as $x => $y) {
+  echo "$x: $y <br>";
+}
 
+
+Display all array items:
+$cars = array("Volvo", "BMW", "Toyota");
+foreach ($cars as $x) {
+  echo "$x <br>";
+}
 
